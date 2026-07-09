@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Sitemap: https://www.alexwebconsult.com/sitemap.xml
+robots:
+  # Ensure all pages are indexed, especially the portfolio and services
+  - index.html
+  - services.html
+  - about.html
+  - portfolio.html
+  - contact.html

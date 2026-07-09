@@ -1,0 +1,373 @@
+/* ================================================== */
+/* GLOBAL VARIABLES & RESET */
+/* Uses CSS Custom Properties for brand consistency */
+/* ================================================== */
+
+:root {
+    --color-bg-primary: #0B0E1A;
+    /* near-black background, main dark theme base */
+    --color-bg-surface: #121729;
+    /* slightly lighter panel/card background */
+    --color-accent-light: #4A9FE8;
+    /* light sky blue, from top of logo gradient */
+    --color-accent-mid: #2D5FC7;
+    /* mid-tone blue for gradients/hovers */
+    --color-accent-dark: #1B2A6B;
+    /* deep navy, from bottom of logo gradient + wordmark */
+    --color-text-primary: #F5F7FA;
+    /* off-white text on dark backgrounds */
+    --color-text-muted: #A9B4CC;
+    /* muted blue-grey secondary text */
+    --color-white-panel: #FFFFFF;
+    /* used sparingly for high-contrast cards/CTAs, echoing the logo's white circle */
+
+    /* Accent Utility Colors (Derived from brand palette) */
+    --color-accent-light-hover: #6faaff;
+    /* Lighter hover state */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg-primary);
+    font-family: 'Inter', sans-serif;
+    /* Assuming Inter is available or falls back to system font */
+    color: var(--color-text-primary);
+}
+
+/* Global Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.bg-surface {
+    background-color: var(--color-bg-surface);
+}
+
+/* Typography & Headings */
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.max-heading {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    /* Responsive headline size */
+    font-weight: 800;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-accent-gradient, linear-gradient(to right, var(--color-accent-light), var(--color-accent-dark)));
+    /* Gradient fallback */
+    margin-bottom: 16px;
+}
+
+.section-subtitle {
+    font-size: 1.15rem;
+    max-width: 700px;
+    color: var(--color-text-muted);
+}
+
+.lead {
+    font-size: 1.25rem;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+
+/* ================================================== */
+/* COMPONENTS (BUTTONS, CARDS, NAVIGATION) */
+/* ================================================== */
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.primary-cta {
+    background: linear-gradient(90deg, var(--color-accent-light) 0%, var(--color-accent-dark) 100%);
+    color: var(--color-white-panel);
+    border: none;
+    box-shadow: 0 4px 20px rgba(74, 159, 232, 0.3);
+}
+
+.primary-cta:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(74, 159, 232, 0.5);
+}
+
+/* Secondary CTA - for internal links */
+.secondary-cta {
+    background: none;
+    color: var(--color-accent-light);
+    border: 1px solid var(--color-accent-mid);
+    padding: 8px 0;
+}
+
+.secondary-cta:hover {
+    background-color: rgba(74, 159, 232, 0.1);
+    box-shadow: none;
+    transform: none;
+}
+
+/* Large Buttons */
+.btn-large {
+    padding: 16px 48px !important;
+    font-size: 1.1rem;
+}
+
+/* Hero/CTA Glow Effect (Accent for key sections) */
+.secondary-glow {
+    background: transparent;
+    border: 2px solid var(--color-accent-light);
+    color: var(--color-text-primary);
+    box-shadow: none;
+}
+
+.secondary-glow:hover {
+    background-color: rgba(74, 159, 232, 0.1);
+    border-color: var(--color-accent-mid);
+    transform: translateY(-1px);
+}
+
+
+/* Cards and Grids */
+
+.pillar-grid,
+.portfolio-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .pillar-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Card Styling */
+.service-card,
+.project-card,
+.feature-box,
+.team-member {
+    background-color: var(--color-bg-surface);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Smooth transition curve */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hover-lift {
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(74, 159, 232, 0.2);
+    border-top: 3px solid var(--color-accent-light);
+}
+
+
+/* ================================================== */
+/* NAVIGATION BAR (STICKY) */
+/* ================================================== */
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(11, 14, 26, 0.95);
+    /* Semi-transparent background on scroll */
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+    padding: 1rem 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Desktop Navigation */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+    color: var(--color-accent-light);
+}
+
+/* Mobile Toggle */
+.menu-toggle {
+    display: none;
+    /* Hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--color-text-primary);
+}
+
+/* Mobile Responsiveness Overrides (Assuming JS handles the hidden/visible state)*/
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Hidden by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-bg-primary);
+        padding: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links.open {
+        display: flex;
+        /* Shown via JS when active */
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 1010;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Force mobile stacking for content sections */
+    .grid-2,
+    .grid-3 {
+        gap: 2rem !important;
+    }
+
+    h1.max-heading {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+    }
+
+}
+
+
+/* ================================================== */
+/* CONTENT SPECIFIC STYLES & LAYOUTS */
+/* ================================================== */
+
+/* Accent Gradient for Headlines */
+.accent-gradient {
+    display: inline;
+    /* Ensures gradient only applies to the text span */
+    background: linear-gradient(90deg, var(--color-accent-light), var(--color-accent-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Service Pillars Layouts */
+.service-section {
+    padding: 80px 0;
+}
+
+
+/* List Styling */
+ul.list-disc,
+ol.list-decimal {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.75rem;
+}
+
+/* Team Member Card Specifics */
+.team-avatar {
+    background-image: linear-gradient(to bottom right, var(--color-accent-light), var(--color-accent-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    font-style: italic;
+    border-left-width: 4px !important;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+/* CTA Final Band Styling */
+.cta-final {
+    background-color: var(--color-bg-surface);
+}
+
+
+/* ================================================== */
+/* MEDIA QUERIES FOR RESPONSIVENESS (MOBILE FIRST BASE) */
+/* ================================================== */
+
+@media (min-width: 768px) {
+    .grid-2>* {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 40px;
+        /* Slightly more padding on large screens */
+    }
+}
