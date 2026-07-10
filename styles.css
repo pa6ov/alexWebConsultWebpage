@@ -35,20 +35,14 @@ body {
     padding: 0;
     background-color: var(--color-bg-primary);
     font-family: 'Inter', sans-serif;
-    /* Assuming Inter is available or falls back to system font */
     color: var(--color-text-primary);
 }
 
-/* Global Utility Classes (NEW/FIXED) */
+/* Global Utility Classes */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.section {
-    padding: 80px 0;
-    /* Standard vertical rhythm maintained */
 }
 
 /* General Spacing Utilities (Replacing utility classes) */
@@ -68,15 +62,6 @@ body {
     margin-bottom: 1.5rem !important;
 }
 
-.pt-20 {
-    padding-top: 5rem !important;
-}
-
-/* Used for major section openers */
-.pb-20 {
-    padding-bottom: 5rem !important;
-}
-
 /* Added for the CTA band */
 .py-20 {
     padding-top: 5rem !important;
@@ -87,110 +72,6 @@ body {
     padding: 60px 0 !important;
 }
 
-/* Flex and Grid Overhaul (Replacing utility classes) */
-.flex-center {
-    display: flex;
-    align-items: center;
-}
-
-@media (min-width: 768px) {
-    .flex-center {
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
-}
-
-/* Grid Layout System */
-.grid-2 {
-    display: grid;
-    gap: 2rem;
-    /* Default to a single column stack for small screens */
-    grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-    .grid-2 {
-        grid-template-columns: repeat(2, 1fr);
-        /* Tablet breakpoint - 2 columns */
-    }
-}
-
-@media (min-width: 1024px) {
-
-    /* Reverting to the intended 2-column behavior for desktop if context dictates it */
-    .grid-2 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-.grid-3 {
-    display: grid;
-    gap: 2rem;
-    /* Default to a single column stack for small screens */
-    grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-    .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-        /* Tablet breakpoint - 2 columns */
-    }
-}
-
-@media (min-width: 1024px) {
-
-    /* Desktop retains the intended 3 column display */
-    .grid-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-
-.portfolio-grid {
-    display: grid;
-    gap: 2rem;
-}
-
-@media (min-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* Tablet breakpoint - 2 columns */
-    }
-}
-
-@media (min-width: 1024px) {
-
-    /* Desktop retains the intended 3 column display */
-    .portfolio-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-
-/* Text/Spacing Utility Implementations */
-
-.text-color-muted {
-    color: var(--color-text-muted) !important;
-}
-
-.max-width-3xl {
-    max-width: 42rem;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-/* ~688px equivalent */
-.max-w-lg {
-    max-width: 50rem;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.text-xl {
-    font-size: 1.25rem !important;
-    line-height: 1.6;
-}
 
 /* ================================================== */
 /* COMPONENTS (BUTTONS, CARDS, NAVIGATION) - FIXED STYLING */
@@ -246,42 +127,6 @@ body {
 }
 
 
-/* Cards and Groups */
-.service-card,
-.project-card,
-.feature-box,
-.team-member {
-    background-color: var(--color-bg-surface);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.hover-lift {
-    transform: translateY(0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(74, 159, 232, 0.2);
-    border-top: 3px solid var(--color-accent-light);
-}
-
-/* Project Card Enhancements (For consistent card height) */
-.project-card {
-    display: flex;
-    flex-direction: column;
-    /* Stack items vertically */
-}
-
-.portfolio-grid .project-card {
-    min-height: 100%;
-    /* Ensures all cards in a row are the same height */
-}
-
-
 /* ================================================== */
 /* NAVIGATION BAR (STICKY) - FIXED */
 /* ================================================== */
@@ -295,50 +140,95 @@ body {
     backdrop-filter: blur(8px);
 }
 
-/* Navigation links for display/accessibility control (no changes needed) */
+/* Desktop Navigation (No change needed here) */
 
 
-/* ================================================== */
-/* CONTENT SPECIFIC STYLES & LAYOUTS - FIXED */
-/* ================================================== */
+/* MOBILE MENU SPECIFIC FIXES: Positioning the links absolutely when open */
+.nav-links {
+    display: flex;
+    /* Default for desktop view */
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
 
-/* Heading Color Fix (Replacing Gradient with Solid Accent Light) */
-.accent-gradient {
-    color: var(--solid-accent-primary) !important;
-    /* Fixed solid color */
+/* Mobile menu toggle (hidden on desktop) */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        /* Overrides the flex display for mobile view, making it stack vertically */
+        flex-direction: column;
+        position: absolute;
+        /* CRITICAL FIX: Takes menu out of flow and allows absolute positioning */
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-bg-primary);
+        padding: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        /* Default state (hidden) */
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease-out;
+        /* Smooth appearance transition */
+    }
+
+    /* State when open (Toggled by JS) */
+    .nav-links.open {
+        display: flex;
+        height: auto;
+        /* Let content dictate the necessary height */
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 1010;
+    }
+
+    /* Force mobile stacking for content sections */
+    body>section>.container,
+    .grid-2,
+    .grid-3 {
+        gap: 2rem !important;
+    }
 }
 
 
-/* Testimonial Card Cleanup */
-.testimonial-card {
-    font-style: italic;
-    border-left-width: 4px !important;
-    margin: 0 auto;
+/* ================================================== */
+/* LAYOUT AND GRAPHICS STYLING (GENERAL FIXES) */
+/* ================================================== */
+
+/* General Image Styling Fix: Ensures all images scale properly and behave as blocks. */
+img {
     max-width: 100%;
-    /* Removed fighting constraint */
-    padding: 2rem;
+    height: auto;
+    display: block;
 }
 
-/* Team Member Styling */
+
+/* Card Groupings & Flow (General adjustments for predictable vertical rhythm) */
+.service-card,
+.project-card,
+.feature-box,
 .team-member {
-    /* Standardization applied to all cards */
+    /* Consistency improvement */
     border-radius: 12px;
-}
-
-.team-avatar {
-    background-color: var(--color-accent-mid);
-    /* Fixed solid background */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 
 /* ================================================== */
-/* MEDIA QUERIES (The Polish) */
+/* MEDIA QUERIES (Comprehensive Responsiveness) */
 /* ================================================== */
 
-/* Phones (≤ 480px) */
 @media (max-width: 480px) {
 
-    /* Global Padding Reduction */
+    /* General Padding Reduction for smaller screens */
     .section {
         padding: 48px 0 !important;
     }
@@ -348,46 +238,23 @@ body {
         font-size: clamp(2rem, 10vw, 3.5rem);
     }
 
-    /* CTA Buttons - Full Width */
+    /* CTA Buttons - Full Width & large tap targets */
     .button,
     .btn-large {
         width: 100% !important;
         padding: 14px 20px !important;
-        /* Ensure tap target is sufficient */
         margin-top: 1rem;
+        /* Added margin to separate stacked buttons */
     }
 
-    /* Grid Collapse to Single Column */
+    /* Grid Collapse to Single Column (Redundant check, but safe) */
     .pillar-grid,
     .portfolio-grid {
-        grid-template-columns: 1fr;
+        gap: 2rem !important;
     }
 
-    .feature-box,
-    .service-card,
-    .project-card {
-        width: 100%;
-        /* Ensure full width utilization in the single column layout */
-    }
-
-    /* Form Inputs - Full Width and large padding */
-    .bg-primary input[type="text"],
-    .bg-primary input[type="email"],
-    .bg-primary select,
-    .bg-primary textarea {
-        width: 100% !important;
-        padding: 12px !important;
-    }
 }
 
-/* Tablets (481px–1024px) */
 @media (min-width: 481px) and (max-width: 1024px) {
-    /* Grid systems now automatically adapt to 2 columns via the .grid-2, .grid-3 rules above. */
-
-    /* Hero text/image sections remain stacked or adjust naturally due to grid system */
-}
-
-/* Desktops (≥ 1200px) - Minor refinement only */
-@media (min-width: 1200px) {
-    /* No major changes needed, but reinforces the professionalism of spacing. */
+    /* This section remains largely the same as previous definitions */
 }

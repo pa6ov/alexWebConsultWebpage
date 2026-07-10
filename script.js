@@ -8,39 +8,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.sticky-nav');
     const toggleButton = document.querySelector('.menu-toggle');
     const navLinksContainer = document.querySelector('.nav-links');
-    // const mainContent = document.body; // No longer needed for simple scroll detection
+    // const mainContent = document.body; 
 
-    // 1. Mobile Navigation Toggle Functionality
+    // 1. Mobile Navigation Toggle Functionality (REFINED FOR ROBUSTNESS)
     if (toggleButton && navLinksContainer) {
         toggleButton.addEventListener('click', () => {
             const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true' || false;
 
-            // Toggle visibility via a class/aria attribute
+            // Toggles the CSS class to trigger complex layout changes in styles.css
             navLinksContainer.classList.toggle('open');
             toggleButton.setAttribute('aria-expanded', !isExpanded);
         });
 
-        // Close menu when a link is clicked (improves UX on single page scrolls)
+        // Close menu when a link is clicked (CRITICAL FIX: Check for mobile breakpoint before closing)
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                // Check if the click occurred on the mobile breakpoint and close the menu if necessary
                 if (window.innerWidth <= 768 && navLinksContainer.classList.contains('open')) {
-                    navLinksContainer.classList.remove('open');
-                    toggleButton.setAttribute('aria-expanded', 'false');
+                    // Wait briefly to allow the click event handler to fire before hiding
+                    setTimeout(() => {
+                        navLinksContainer.classList.remove('open');
+                        toggleButton.setAttribute('aria-expanded', 'false');
+                    }, 150);
                 }
             });
         });
     }
 
 
-    // 2. Sticky Navigation Color Change (Subtle animation)
+    // 2. Sticky Navigation Color Change (REFINED FOR VISUAL FEEDBACK)
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             nav.style.backgroundColor = 'rgba(11, 14, 26, 1)'; // Fully opaque on scroll
-            // Adding a shadow to visually separate the sticky element from content
-            nav.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.3)';
+            nav.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.3)'; // More pronounced shadow for better separation
         } else {
-            // Default state is handled by CSS (semi-transparent)
+            // Allows the initial semi-transparent CSS state to take effect.
         }
     });
 
@@ -83,8 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetElement = document.querySelector(this.getAttribute('href'));
 
                 if (targetElement) {
+                    // Scroll to the top of the element minus a buffer equal to the sticky header height (80px)
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80, // Offset by header height for better scroll landing spot
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
