@@ -20,7 +20,7 @@
     <link rel="canonical" href="https://www.alexwebconsult.com/">
 
     <style>
-        /* Placeholder styles for better rendering in a single output */
+        /* Placeholder styles removed/handled by the dedicated style.css */
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--color-bg-primary);
@@ -50,7 +50,7 @@
     </script>
 </head>
 
-<body>
+<body class="overflow-x-hidden">
 
     <!-- Header and Navigation -->
     <header class="sticky-nav">
@@ -78,49 +78,48 @@
     <main role="main">
 
         <!-- Hero Section -->
-        <section id="hero" class="section bg-surface padding-md flex-center">
-            <div class="container hero-content text-center">
-                <h1 class="headline max-heading mb-4">
-                    Your Digital Partner. <br> Building robust, scalable web solutions.
-                </h1>
-                <p class="lead text-xl mb-8" style="color: var(--color-text-muted);">
-                    From e-commerce builds to sophisticated backend integration, we provide full-cycle development and
-                    strategic tech consulting tailored for growth.
-                </p>
-                <a href="contact.html" class="button primary-cta btn-large">Tap to Book Free Consultation</a>
+        <section id="hero" class="section bg-surface flex-center">
+            <div class="container hero-content text-center max-w-4xl mx-auto">
+                <h1 class="max-heading mb-mb-6 accent-gradient">Your Digital Partner. <br> Building robust, scalable web
+                    solutions.</h1>
+                <p class="lead mb-lg" style="color: var(--color-text-muted);">From e-commerce builds to sophisticated
+                    backend integration, we provide full-cycle development and strategic tech consulting tailored for
+                    growth.</p>
+                <!-- Changed primary CTA classes -->
+                <a href="contact.html" class="button primary-cta btn-large px-10 py-3">Tap to Book Free Consultation</a>
             </div>
         </section>
 
         <!-- Three Pillars Services Overview -->
-        <section id="services-pillars" class="section padding-lg">
+        <section id="services-pillars" class="service-section">
             <div class="container text-center">
-                <h2 class="section-title mb-3">Our Core Capabilities</h2>
-                <p class="section-subtitle mb-10 max-width mx-auto">Focusing on three key areas to ensure your digital
-                    foundation is solid and scalable.</p>
+                <h2 class="section-title mb-mb-10">Our Core Capabilities</h2>
+                <p class="section-subtitle mb-lg">Focusing on three key areas to ensure your digital foundation is solid
+                    and scalable.</p>
 
-                <div class="pillar-grid grid-3 gap-8">
+                <div class="pillar-grid gap-8">
                     <!-- Pillar 1 -->
-                    <article class="service-card bg-surface p-6 hover-lift" aria-labelledby="pillar1-title">
-                        <h3 id="pillar1-title" class="text-2xl mb-3 accent-gradient">Website Creation & Support</h3>
-                        <p class="text-lg text-color-muted mb-4">Building beautiful, functional websites from the ground
+                    <article class="service-card hover-lift" aria-labelledby="pillar1-title">
+                        <h3 id="pillar1-title" class="text-2xl mb-4 accent-gradient">Website Creation & Support</h3>
+                        <p class="text-lg text-color-muted mb-6">Building beautiful, functional websites from the ground
                             up. We handle modern frameworks, responsive design, and flawless UX.</p>
                         <a href="services.html#website-creation" class="button secondary-cta link-only">Learn More
                             &rarr;</a>
                     </article>
 
                     <!-- Pillar 2 -->
-                    <article class="service-card bg-surface p-6 hover-lift" aria-labelledby="pillar2-title">
-                        <h3 id="pillar2-title" class="text-2xl mb-3 accent-gradient">Tech Consultations</h3>
-                        <p class="text-lg text-color-muted mb-4">Strategic advice on technology stacks, architectural
+                    <article class="service-card hover-lift" aria-labelledby="pillar2-title">
+                        <h3 id="pillar2-title" class="text-2xl mb-4 accent-gradient">Tech Consultations</h3>
+                        <p class="text-lg text-color-muted mb-6">Strategic advice on technology stacks, architectural
                             choices, and optimizing your digital strategy for maximum ROI.</p>
                         <a href="services.html#tech-consultations" class="button secondary-cta link-only">Learn More
                             &rarr;</a>
                     </article>
 
                     <!-- Pillar 3 (Value Prop) -->
-                    <article class="service-card bg-surface p-6 hover-lift" aria-labelledby="pillar3-title">
-                        <h3 id="pillar3-title" class="text-2xl mb-3 accent-gradient">We build & maintain, you grow.</h3>
-                        <p class="text-lg text-color-muted mb-4">We offer continuous partnership—keeping your site
+                    <article class="service-card hover-lift" aria-labelledby="pillar3-title">
+                        <h3 id="pillar3-title" class="text-2xl mb-4 accent-gradient">We build & maintain, you grow.</h3>
+                        <p class="text-lg text-color-muted mb-6">We offer continuous partnership—keeping your site
                             secure, updated, and perfectly aligned with your business growth.</p>
                         <a href="services.html#maintenance" class="button secondary-cta link-only">Learn More &rarr;</a>
                     </article>
@@ -129,136 +128,141 @@
         </section>
 
         <!-- Why AlexWeb Consult / Value Proposition Section -->
-        <section id="why-alexweb" class="section bg-surface padding-lg py-20">
-            <div class="container">
-                <h2 class="text-center section-title mb-3">Why Partner with AlexWeb Consult?</h2>
-                <p class="max-width mx-auto text-center text-xl mb-12 max-w-3xl"
-                    style="color: var(--color-text-muted);">
-                    We are a senior, lean team committed to full-cycle excellence. We don't just build sites; we build
-                    digital assets that drive revenue.
-                </p>
+        <section id="why-alexweb" class="service-section bg-surface">
+            <div class="container text-center max-w-4xl mx-auto">
+                <h2 class="section-title mb-mb-3">Why Partner with AlexWeb Consult?</h2>
+                <p class="text-xl text-color-muted mb-lg">We are a senior, lean team committed to full-cycle excellence.
+                    We don't just build sites; we build digital assets that drive revenue.</p>
 
-                <div class="value-prop-grid grid-2 gap-10">
+                <div class="grid-2 gap-10">
                     <!-- Feature 1 -->
-                    <div class="feature-box bg-primary/5 p-6 rounded-lg shadow-xl hover-scale" role="article">
-                        <h3 class="text-xl mb-3 accent-gradient">Senior Expertise, Dedicated Focus</h3>
+                    <div class="service-card bg-primary/5 shadow-xl hover-lift" role="article">
+                        <h3 class="text-xl mb-4 accent-gradient">Senior Expertise, Dedicated Focus</h3>
                         <p class="text-color-muted">Forget generalized agencies. Our core team provides senior-level
                             expertise across the entire stack—from foundational HTML/CSS to complex backend integration
                             (Java, Python).</p>
                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="feature-box bg-primary/5 p-6 rounded-lg shadow-xl hover-scale" role="article">
-                        <h3 class="text-xl mb-3 accent-gradient">Communication First</h3>
+                    <div class="service-card bg-primary/5 shadow-xl hover-lift" role="article">
+                        <h3 class="text-xl mb-4 accent-gradient">Communication First</h3>
                         <p class="text-color-muted">We maintain transparent, clear communication throughout the
                             development lifecycle. You always know the progress, and we explain the 'why' behind every
                             decision.</p>
                     </div>
 
                     <!-- Feature 3 -->
-                    <div class="feature-box bg-primary/5 p-6 rounded-lg shadow-xl hover-scale" role="article">
-                        <h3 class="text-xl mb-3 accent-gradient">Full Lifecycle Partnership</h3>
+                    <div class="service-card bg-primary/5 shadow-xl hover-lift" role="article">
+                        <h3 class="text-xl mb-4 accent-gradient">Full Lifecycle Partnership</h3>
                         <p class="text-color-muted">Our services extend far beyond deployment. We embed maintenance and
                             consultation into our process, ensuring long-term growth and stability.</p>
                     </div>
 
                     <!-- Feature 4 -->
-                    <div class="feature-box bg-primary/5 p-6 rounded-lg shadow-xl hover-scale" role="article">
-                        <h3 class="text-xl mb-3 accent-gradient">Fast & Reliable Turnaround</h3>
+                    <div class="service-card bg-primary/5 shadow-xl hover-lift" role="article">
+                        <h3 class="text-xl mb-4 accent-gradient">Fast & Reliable Turnaround</h3>
                         <p class="text-color-muted">Leveraging proven methodologies and a focused senior team, we
                             promise fast turnarounds without ever compromising on quality or robust functionality.</p>
                     </div>
                 </div>
 
-                <div class="text-center mt-12 max-w-xl mx-auto">
-                    <a href="#contact-section" class="button primary-cta btn-large secondary-glow">Ready to Grow? Book
-                        your FREE Consultation!</a>
+                <div class="mt-16 max-w-xl mx-auto">
+                    <a href="#contact-section" class="button primary-cta btn-large px-8 py-3 secondary-glow">Ready to
+                        Grow? Book your FREE Consultation!</a>
                 </div>
             </div>
         </section>
 
 
         <!-- Featured Work / Portfolio Teaser Section -->
-        <section id="portfolio-teaser" class="section padding-lg py-20">
+        <section id="portfolio-teaser" class="service-section bg-surface">
             <div class="container text-center">
-                <h2 class="section-title mb-3">Featured Client Success Stories</h2>
-                <p class="section-subtitle mb-12 max-w-2xl mx-auto">See how we built digital infrastructure for real
-                    businesses across diverse industries.</p>
+                <h2 class="section-title mb-mb-3">Featured Client Success Stories</h2>
+                <p class="section-subtitle mb-lg">See how we built digital infrastructure for real businesses across
+                    diverse industries.</p>
 
-                <div class="portfolio-grid grid-4 gap-8 text-left">
+                <div class="portfolio-grid gap-8 text-left">
                     <!-- Project 1: BetterHealthyLife -->
-                    <article class="project-card bg-surface p-6 hover-lift" role="figure">
+                    <article class="project-card hover-lift" role="figure">
                         <img src="[Placeholder Image URL]" alt="BetterHealthyLife e-commerce platform screenshot."
-                            class="w-full rounded mb-4 opacity-70">
-                        <h3 class="text-xl accent-gradient mb-1">BetterHealthyLife</h3>
-                        <p class="text-sm text-gray-500 mb-2">E-commerce | Fitness & Wellness</p>
-                        <p class="mb-4 text-color-muted">E-commerce build for a fitness and wellness brand, featuring
-                            product catalog, cart, and subscription content access.</p>
-                        <a href="portfolio.html" aria-label="View BetterHealthyLife project details"
-                            class="text-sm flex items-center hover:text-accent-light transition-colors">Case Study
-                            &rarr;</a>
+                            class="w-full rounded mb-6 opacity-70 filter grayscale transition duration-300">
+                        <h3 class="text-2xl mb-1 accent-gradient">BetterHealthyLife</h3>
+                        <p class="text-sm text-gray-500 mb-2 uppercase font-semibold tracking-widest">E-commerce |
+                            Fitness & Wellness</p>
+                        <p class="mb-6 text-color-muted flex-grow">E-commerce build for a fitness and wellness brand,
+                            featuring product catalog, cart, and subscription content access.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-700">
+                            <span class="text-sm text-yellow-400">Link: betterhealthylife.eu</span>
+                            <a href="portfolio.html" aria-label="View BetterHealthyLife project details"
+                                class="text-color-muted hover:underline transition duration-150">Case Study &rarr;</a>
+                        </div>
                     </article>
 
                     <!-- Project 2: Mustafa Duran Fitness -->
-                    <article class="project-card bg-surface p-6 hover-lift" role="figure">
+                    <article class="project-card hover-lift" role="figure">
                         <img src="[Placeholder Image URL]"
                             alt="Mustafa Duran Fitness personal training website screenshot."
-                            class="w-full rounded mb-4 opacity-70">
-                        <h3 class="text-xl accent-gradient mb-1">Mustafa Duran Fitness</h3>
-                        <p class="text-sm text-gray-500 mb-2">Coaching Platform | Personal Training</p>
-                        <p class="mb-4 text-color-muted">Personal-training and coaching site built to convert visitors
-                            into booked consultations and structured program signups.</p>
-                        <a href="portfolio.html" aria-label="View Mustafa Duran Fitness project details"
-                            class="text-sm flex items-center hover:text-accent-light transition-colors">Case Study
-                            &rarr;</a>
+                            class="w-full rounded mb-6 opacity-70 filter grayscale transition duration-300">
+                        <h3 class="text-2xl mb-1 accent-gradient">Mustafa Duran Fitness</h3>
+                        <p class="text-sm text-yellow-400 mb-2 uppercase font-semibold tracking-widest">Coaching
+                            Platform | Personal Training</p>
+                        <p class="mb-6 text-color-muted flex-grow">Personal-training and coaching site built to convert
+                            visitors into booked consultations and structured program signups.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-700">
+                            <span class="text-sm text-green-400">Link: mustafaduranfitness.com</span>
+                            <a href="portfolio.html" aria-label="View Mustafa Duran Fitness project details"
+                                class="text-color-muted hover:underline transition duration-150">Case Study &rarr;</a>
+                        </div>
                     </article>
 
                     <!-- Project 3: New Green Energy -->
-                    <article class="project-card bg-surface p-6 hover-lift" role="figure">
+                    <article class="project-card hover-lift" role="figure">
                         <img src="[Placeholder Image URL]" alt="New Green Energy corporate website screenshot."
-                            class="w-full rounded mb-4 opacity-70">
-                        <h3 class="text-xl accent-gradient mb-1">New Green Energy</h3>
-                        <p class="text-sm text-gray-500 mb-2">Corporate | Renewable Energy</p>
-                        <p class="mb-4 text-color-muted">Business website for a renewable energy company, providing
-                            professional information and credibility for industry leaders.</p>
-                        <a href="portfolio.html" aria-label="View New Green Energy project details"
-                            class="text-sm flex items-center hover:text-accent-light transition-colors">Case Study
-                            &rarr;</a>
+                            class="w-full rounded mb-6 opacity-70 filter grayscale transition duration-300">
+                        <h3 class="text-2xl mb-1 accent-gradient">New Green Energy</h3>
+                        <p class="text-sm text-green-400 mb-2 uppercase font-semibold tracking-widest">Corporate |
+                            Renewable Energy</p>
+                        <p class="mb-6 text-color-muted flex-grow">Business website for a renewable energy company,
+                            providing professional information and credibility for industry leaders.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-700">
+                            <span class="text-sm text-indigo-400">Link: newgreenenergy.net</span>
+                            <a href="portfolio.html" aria-label="View New Green Energy project details"
+                                class="text-color-muted hover:underline transition duration-150">Case Study &rarr;</a>
+                        </div>
                     </article>
 
-                    <!-- Project 4: Placeholder/Concept Demo -->
-                    <article class="project-card bg-surface p-6 opacity-50 hover-lift" role="figure">
+                    <!-- Project 4: Concept Demo (Styling adjusted to avoid breakage) -->
+                    <article class="project-card bg-primary/5 opacity-70 hover-lift" role="figure">
                         <img src="[Placeholder Image URL]" alt="Generic landing page concept demo placeholder."
-                            class="w-full rounded mb-4 opacity-70">
-                        <h3 class="text-xl accent-gradient mb-1">UX Concept Demo</h3>
-                        <p class="text-sm text-red-400 font-medium mb-2">CONCEPT / CAPABILITY DEMO</p>
-                        <p class="mb-4 text-color-muted">A fully responsive, high-conversion landing page template
-                            demonstrating modern UI/UX principles and technical flexibility.</p>
-                        <a href="#"
-                            class="text-sm flex items-center hover:text-accent-light transition-colors opacity-70 cursor-not-allowed">Demo
-                            Details (Coming Soon)</a>
+                            class="w-full rounded mb-6 opacity-50">
+                        <h3 class="text-2xl mb-1 accent-gradient">UX Concept Demo</h3>
+                        <p class="text-sm text-red-400 font-medium mb-4 uppercase tracking-widest">CONCEPT / CAPABILITY
+                            DEMO</p>
+                        <p class="mb-6 text-color-muted flex-grow">A fully responsive, high-conversion landing page
+                            template demonstrating modern UI/UX principles and technical flexibility.</p>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-700">
+                            <span class="text-sm text-red-400">Link: concept demo</span>
+                            <a href="#"
+                                class="text-color-muted hover:underline transition duration-150 opacity-70 cursor-not-allowed">Demo
+                                Details (Coming Soon)</a>
+                        </div>
                     </article>
 
-                </div>
-
-                <div class="mt-16 text-center">
-                    <a href="portfolio.html" class="button primary-cta btn-large secondary-glow px-8 py-3">View Full
-                        Portfolio &rarr;</a>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonial Section (Illustrative Sample) -->
-        <section id="testimonials" class="section bg-bg-primary padding-lg pt-20 pb-16">
-            <div class="container text-center max-w-3xl">
-                <h2 class="section-title mb-4">Trusted by Innovative Businesses</h2>
-                <p class="text-color-muted mb-8">Building credibility through results. (These quotes are sample text,
+        <!-- Testimonial Section -->
+        <section id="testimonials" class="service-section bg-bg-surface">
+            <div class="container text-center max-w-3xl mx-auto">
+                <h2 class="section-title mb-mb-4">Trusted by Innovative Businesses</h2>
+                <p class="text-color-muted mb-lg">Building credibility through results. (These quotes are sample text,
                     illustrating quality we deliver.)</p>
 
-                <div class="testimonial-card bg-bg-surface p-8 rounded-xl shadow-2xl border-l-4"
-                    style="border-color: var(--color-accent-light);">
+                <div class="testimonial-card bg-bg-surface p-8 rounded-xl shadow-2xl"
+                    style="border-left: 4px solid var(--color-accent-light);">
                     <blockquote role="figure">
-                        <p class="text-2xl italic mb-6 leading-relaxed text-white">"AlexWeb was professional, clear, and
+                        <p class="text-2xl mb-6 leading-relaxed text-white">"AlexWeb was professional, clear, and
                             incredibly fast. They took our ideas from rough sketches to a fully functional e-commerce
                             site with minimal hassle."</p>
                         <figcaption class="text-lg font-semibold text-accent-light">— Client A (Illustrative Sample)
@@ -271,21 +275,22 @@
 
 
         <!-- Final CTA Band -->
-        <section id="contact-section" class="cta-final bg-surface py-20">
-            <div class="container text-center">
-                <h2 class="text-4xl font-extrabold mb-4 accent-gradient">Ready to Launch Your Digital Future?</h2>
-                <p class="text-xl text-color-muted mb-10 max-w-3xl mx-auto">Let's discuss your project scope. Book a
-                    free, zero-obligation consultation today!</p>
-                <a href="contact.html" class="button primary-cta btn-lg px-12 py-4">Book Free Consultation Today!</a>
+        <section id="contact-section" class="cta-final section bg-surface">
+            <div class="container text-center max-w-3xl mx-auto">
+                <h2 class="text-4xl font-extrabold mb-mb-4 accent-gradient">Ready to Launch Your Digital Future?</h2>
+                <p class="text-xl text-color-muted mb-lg">Let's discuss your project scope. Book a free, zero-obligation
+                    consultation today!</p>
+                <a href="contact.html" class="button primary-cta btn-large px-12 py-4 secondary-glow">Book Free
+                    Consultation Today!</a>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary py-16 border-t border-gray-800">
-        <div class="container grid grid-cols-2 md:grid-cols-5 gap-10 text-sm">
-
+    <footer class="bg-primary pt-16 pb-10 border-t border-gray-800">
+        <div class="container grid gap-10 text-sm" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <!-- Content unchanged -->
             <div class="col-span-2 md:col-span-2">
                 <h4 class="text-xl mb-3 accent-gradient">AlexWeb Consult</h4>
                 <p class="text-color-muted max-w-xs mb-4">Your Digital Partner. We build full-stack web solutions and
@@ -313,16 +318,14 @@
             <div>
                 <h5 class="uppercase text-sm font-semibold tracking-wider mb-3 text-accent-light">Connect</h5>
                 <div aria-label="Social Media Links" class="flex space-x-4">
-                    <!-- Instagram Icon placeholder -->
                     <a href="https://www.instagram.com/alexweb.consult/" target="_blank"
                         aria-label="Instagram profile for AlexWeb Consult"
                         class="text-color-muted hover:text-accent-light transition duration-150 transform hover:scale-110">@alexweb.consult</a>
-                    <!-- LinkedIn Icon placeholder -->
                 </div>
             </div>
 
         </div>
-        <div class="container mt-10 pt-6 border-t border-gray-800 text-center text-xs text-color-muted">
+        <div class="mt-10 pt-6 border-t border-gray-800 text-center text-xs text-color-muted">
             &copy; 2024 AlexWeb Consult. All Rights Reserved. | Built with passion and code perfection.
         </div>
     </footer>

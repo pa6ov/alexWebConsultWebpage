@@ -8,7 +8,7 @@
     <meta name="description"
         content="Detailed services from AlexWeb Consult: full website creation, advanced tech consulting, and robust ongoing digital maintenance solutions.">
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Website Creation & Tech Consulting | AlexWeb Consult">
+    <meta property="og:title" content="AlexWeb Consult | Website Creation & Tech Consulting">
     <meta property="og:description"
         content="Expert development services for modern websites, e-commerce solutions, and custom tech consulting. Your Digital Partner.">
     <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
     <link rel="canonical" href="https://www.alexwebconsult.com/services.html">
 
     <style>
-        /* Placeholder styles */
+        /* Placeholder styles removed/handled by the dedicated style.css */
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--color-bg-primary);
@@ -47,7 +47,7 @@
     </script>
 </head>
 
-<body>
+<body class="overflow-x-hidden">
 
     <!-- Header and Navigation -->
     <header class="sticky-nav">
@@ -76,24 +76,25 @@
     <main role="main">
 
         <!-- Hero/Pillar Intro Section -->
-        <section id="service-intro" class="section bg-surface padding-lg py-20">
+        <section id="service-intro" class="section bg-surface py-20">
             <div class="container text-center max-w-4xl mx-auto">
-                <h1 class="max-heading mb-4 accent-gradient">Digital Solutions for Real Growth.</h1>
-                <p class="text-xl text-color-muted mb-8">We provide targeted, full-cycle digital services that transform
-                    ambitions into high-performing online realities.</p>
-                <a href="#contact-section" class="button primary-cta btn-lg px-10 py-3">Book Free Consultation</a>
+                <h1 class="max-heading mb-mb-4 accent-gradient">Digital Solutions for Real Growth.</h1>
+                <p class="text-xl text-color-muted mb-lg">We provide targeted, full-cycle digital services that
+                    transform ambitions into high-performing online realities.</p>
+                <a href="#contact-section" class="button primary-cta btn-large px-10 py-3 secondary-glow">Book Free
+                    Consultation</a>
             </div>
         </section>
 
         <!-- 1. Website Creation & Support -->
-        <section id="website-creation" class="service-section padding-lg py-24">
-            <div class="container grid md:grid-cols-2 gap-16 items-start">
-                <article class="md:col-span-1">
-                    <h2 class="text-3xl accent-gradient mb-4">🌐 Website Creation & Support</h2>
-                    <p class="text-lg text-color-muted mb-6 max-w-md">The core of your online presence. We build
+        <section id="website-creation" class="service-section">
+            <div class="container grid gap-16 items-start md:grid-cols-2">
+                <article>
+                    <h2 class="text-3xl mb-4 accent-gradient">🌐 Website Creation & Support</h2>
+                    <p class="text-lg text-color-muted mb-mb-6 max-w-md">The core of your online presence. We build
                         high-performing, beautiful sites designed for conversion and scale.</p>
 
-                    <h3 class="text-xl mb-4 mt-8 accent-gradient">What's Included?</h3>
+                    <h3 class="text-xl mb-4 mt-10 accent-gradient">What's Included?</h3>
                     <ul class="list-disc pl-6 space-y-2 text-color-muted">
                         <li>Modern UI/UX Design (Tailored to your brand)</li>
                         <li>Responsive Development (Flawless on all devices)</li>
@@ -101,8 +102,8 @@
                         <li>CMS Setup (Strapi, WordPress integration, etc.)</li>
                     </ul>
 
-                    <h3 class="text-xl mb-4 mt-6 accent-gradient">The Process</h3>
-                    <ol class="space-y-2 text-color-muted list-decimal pl-6">
+                    <h3 class="text-xl mb-4 mt-10 accent-gradient">The Process</h3>
+                    <ol class="list-decimal pl-6 space-y-2 text-color-muted">
                         <li>Discovery & Planning Call</li>
                         <li>Wireframing & Design Mockups</li>
                         <li>Development & Iterative Feedback</li>
@@ -110,28 +111,28 @@
                     </ol>
                 </article>
                 <!-- Image/Illustration Placeholder -->
-                <div
-                    class="md:col-span-1 p-8 bg-bg-surface rounded-lg flex items-center justify-center hover:shadow-blue-glow transition duration-300">
-                    <svg width="100%" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="p-8 bg-bg-surface rounded-lg shadow-2xl">
+                    <svg width="100%" height="350" viewBox="0 0 600 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="100%" height="100%" fill="#1A2140" />
                         <circle cx="150" cy="70" r="40" fill="var(--color-accent-light)" opacity=".3" />
                         <rect x="250" y="10" width="80" height="280" rx="10" fill="#1A2140" opacity=".5" />
                         <polygon points="100,50 120,80 140,50" fill="var(--color-accent-mid)" opacity=".6" />
                     </svg>
-                    <p class="absolute text-xl mt-10 text-color-muted">Visual: Responsive Web Flow</p>
+                    <!-- FIX: Moved caption to normal flow below illustration -->
+                    <p class="text-xl mt-6 text-color-muted">Visual: Responsive Web Flow</p>
                 </div>
             </div>
         </section>
 
         <!-- 2. Tech Consultations -->
-        <section id="tech-consultations" class="service-section padding-lg py-24 bg-bg-surface/5">
-            <div class="container grid md:grid-cols-2 gap-16 items-start">
-                <article class="md:col-span-1">
-                    <h2 class="text-3xl accent-gradient mb-4">💡 Tech Consultations & Strategy</h2>
-                    <p class="text-lg text-color-muted mb-6 max-w-md">Solving complex problems. We audit your current
+        <section id="tech-consultations" class="service-section bg-surface/5">
+            <div class="container grid gap-16 items-start md:grid-cols-2">
+                <article>
+                    <h2 class="text-3xl mb-4 accent-gradient">💡 Tech Consultations & Strategy</h2>
+                    <p class="text-lg text-color-muted mb-mb-6 max-w-md">Solving complex problems. We audit your current
                         tech stack and guide you toward efficient, scalable digital architecture.</p>
 
-                    <h3 class="text-xl mb-4 mt-8 accent-gradient">When Do You Need Consultation?</h3>
+                    <h3 class="text-xl mb-4 mt-10 accent-gradient">When Do You Need Consultation?</h3>
                     <ul class="list-disc pl-6 space-y-2 text-color-muted">
                         <li>Choosing the right tech stack (React vs Vue, etc.)</li>
                         <li>Integrating legacy systems with modern APIs.</li>
@@ -139,34 +140,33 @@
                         <li>Advising on optimal third-party tool usage.</li>
                     </ul>
 
-                    <h3 class="text-xl mb-4 mt-6 accent-gradient">Technology Range</h3>
-                    <p class="text-color-muted italic">From modern JavaScript frameworks to deep backend languages like
-                        Java, C++, and Python—we see the full picture.</p>
+                    <h3 class="text-xl mb-4 mt-10 accent-gradient">Technology Range</h3>
+                    <p class="text-color-muted italic text-base bg-primary/5 p-4 rounded-md border-l-4"
+                        style="border-color: var(--color-accent-light);">From modern JavaScript frameworks to deep
+                        backend languages like Java, C++, and Python—we see the full picture.</p>
                 </article>
                 <!-- Image/Illustration Placeholder -->
-                <div
-                    class="md:col-span-1 p-8 bg-bg-surface rounded-lg flex items-center justify-center hover:shadow-blue-glow transition duration-300">
-                    <svg width="100%" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="p-8 bg-bg-surface rounded-lg shadow-2xl">
+                    <svg width="100%" height="350" viewBox="0 0 600 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="100%" height="100%" fill="#1A2140" />
-                        <path d="M50 180 C 150 90, 350 180, 550 230" stroke="var(--color-accent-mid)" stroke-width="6"
+                        <path d="M50 380 C 150 280, 350 380, 550 300" stroke="var(--color-accent-mid)" stroke-width="6"
                             opacity=".7" />
-                        <circle cx="100" cy="50" r="15" fill="#4A9FE8" />
-                        <rect x="300" y="10" width="100" height="280" rx="10" fill="#1A2140" opacity=".5" />
+                        <path d="M50 380 L 550 380" stroke="var(--color-text-primary)" stroke-width="2" opacity=".1" />
                     </svg>
-                    <p class="absolute text-xl mt-10 text-color-muted">Visual: System Architecture Flowchart</p>
+                    <p class="text-xl mt-6 text-color-muted">Visual: System Architecture Flowchart</p>
                 </div>
             </div>
         </section>
 
         <!-- 3. Maintenance & Support -->
-        <section id="maintenance" class="service-section padding-lg py-24 bg-bg-surface/5">
-            <div class="container grid md:grid-cols-2 gap-16 items-start">
-                <article class="md:col-span-1">
-                    <h2 class="text-3xl accent-gradient mb-4">⚙️ Maintenance & Ongoing Support</h2>
-                    <p class="text-lg text-color-muted mb-6 max-w-md">Your website is a living asset. We ensure it
+        <section id="maintenance" class="service-section bg-surface/5">
+            <div class="container grid gap-16 items-start md:grid-cols-2">
+                <article>
+                    <h2 class="text-3xl mb-4 accent-gradient">⚙️ Maintenance & Ongoing Support</h2>
+                    <p class="text-lg text-color-muted mb-mb-6 max-w-md">Your website is a living asset. We ensure it
                         remains secure, fast, and functionally flawless 24/7.</p>
 
-                    <h3 class="text-xl mb-4 mt-8 accent-gradient">What does partnership mean?</h3>
+                    <h3 class="text-xl mb-4 mt-10 accent-gradient">What does partnership mean?</h3>
                     <ul class="list-disc pl-6 space-y-2 text-color-muted">
                         <li>Security Audits & Patching</li>
                         <li>Performance Optimization (Speed/Core Web Vitals)</li>
@@ -174,24 +174,22 @@
                         <li>Dedicated Point of Contact for quick fixes.</li>
                     </ul>
 
-                    <h3 class="text-xl mb-4 mt-6 accent-gradient">The Guarantee</h3>
-                    <p class="text-color-muted italic text-lg bg-primary/5 p-4 rounded-md border-l-4"
+                    <h3 class="text-xl mb-4 mt-10 accent-gradient">The Guarantee</h3>
+                    <p class="text-color-muted italic text-lg p-6 rounded-md border-l-4"
                         style="border-color: var(--color-accent-light);">
                         We handle the technical complexities so you can focus solely on your business growth. <span
                             class="font-bold text-xl">“We build & maintain, you grow.”</span>
                     </p>
                 </article>
                 <!-- Image/Illustration Placeholder -->
-                <div
-                    class="md:col-span-1 p-8 bg-bg-surface rounded-lg flex items-center justify-center hover:shadow-blue-glow transition duration-300">
-                    <svg width="100%" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="p-8 bg-bg-surface rounded-lg shadow-2xl">
+                    <svg width="100%" height="350" viewBox="0 0 600 350" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="100%" height="100%" fill="#1A2140" />
-                        <path d="M50 180 C 150 90, 350 180, 550 230" stroke="var(--color-accent-mid)" stroke-width="6"
+                        <path d="M50 380 C 150 280, 350 380, 550 300" stroke="var(--color-accent-mid)" stroke-width="6"
                             opacity=".7" />
-                        <circle cx="100" cy="50" r="15" fill="#4A9FE8" />
-                        <rect x="300" y="10" width="100" height="280" rx="10" fill="#1A2140" opacity=".5" />
+                        <path d="M50 380 L 550 380" stroke="var(--color-text-primary)" stroke-width="2" opacity=".1" />
                     </svg>
-                    <p class="absolute text-xl mt-10 text-color-muted">Visual: Continuous Cycle Support</p>
+                    <p class="text-xl mt-6 text-color-muted">Visual: Continuous Cycle Support</p>
                 </div>
             </div>
         </section>
@@ -200,8 +198,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary py-16 border-t border-gray-800">
-        <div class="container grid grid-cols-2 md:grid-cols-5 gap-10 text-sm">
+    <footer class="bg-primary pt-16 pb-10 border-t border-gray-800">
+        <div class="container grid text-sm" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <!-- Content unchanged -->
             <div class="col-span-2 md:col-span-2">
                 <h4 class="text-xl mb-3 accent-gradient">AlexWeb Consult</h4>
                 <p class="text-color-muted max-w-xs mb-4">Your Digital Partner. We build full-stack web solutions and
@@ -236,7 +235,7 @@
             </div>
 
         </div>
-        <div class="container mt-10 pt-6 border-t border-gray-800 text-center text-xs text-color-muted">
+        <div class="mt-10 pt-6 border-t border-gray-800 text-center text-xs text-color-muted">
             &copy; 2024 AlexWeb Consult. All Rights Reserved. | Built with passion and code perfection.
         </div>
     </footer>

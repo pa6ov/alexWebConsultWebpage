@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.sticky-nav');
     const toggleButton = document.querySelector('.menu-toggle');
     const navLinksContainer = document.querySelector('.nav-links');
-    const mainContent = document.body;
+    // const mainContent = document.body; // No longer needed for simple scroll detection
 
     // 1. Mobile Navigation Toggle Functionality
     if (toggleButton && navLinksContainer) {
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close menu when a link is clicked (improves UX on single page scrolls)
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
+                // Check if the click occurred on the mobile breakpoint and close the menu if necessary
                 if (window.innerWidth <= 768 && navLinksContainer.classList.contains('open')) {
                     navLinksContainer.classList.remove('open');
                     toggleButton.setAttribute('aria-expanded', 'false');
@@ -36,14 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             nav.style.backgroundColor = 'rgba(11, 14, 26, 1)'; // Fully opaque on scroll
-            nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
+            // Adding a shadow to visually separate the sticky element from content
+            nav.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.3)';
         } else {
-            // The CSS handles the initial transparent state, but this ensures JS doesn't overwrite it unnecessarily
+            // Default state is handled by CSS (semi-transparent)
         }
     });
 
 
-    // 3. Scroll Reveal Animation (Minimalist approach)
+    // 3. Scroll Reveal Animation (Intersection Observer API)
     const sections = document.querySelectorAll('.service-section');
 
     const observerOptions = {
@@ -55,35 +57,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add a class that triggers CSS animations defined in styles.css
+                // Apply final state styles for animation effect
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
                 observer.unobserve(entry.target); // Stop observing once visible
-            } else {
-                // Reset state for smooth entry (if needed, depends on full CSS implementation)
             }
         });
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     sections.forEach(section => {
-        // Initialize elements with hidden/transformed state for the animation to work
+        // Set initial state for animation effect to work (invisible and slightly moved down)
         section.style.opacity = '0';
         section.style.transform = 'translateY(20px)';
-        section.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)'; // Custom timing function for professional feel
+        section.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)'; // Consistent transition curve
         observer.observe(section);
     });
 
 
-    // 4. Smooth Scrolling (Fallback/Improvement)
+    // 4. Smooth Scrolling (Universal fallback for internal links)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            // Check if it's an internal jump link or a navigation CTA
-            if (this.getAttribute('href') !== '#') {
+            if (this.getAttribute('href') !== '#' && this.getAttribute('href').length > 1) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetElement = document.querySelector(this.getAttribute('href'));
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Offset by header height for better scroll landing spot
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });

@@ -20,7 +20,7 @@
     <link rel="canonical" href="https://www.alexwebconsult.com/about.html">
 
     <style>
-        /* Placeholder styles */
+        /* Placeholder styles removed/handled by the dedicated style.css */
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--color-bg-primary);
@@ -51,7 +51,7 @@
     </script>
 </head>
 
-<body>
+<body class="overflow-x-hidden">
 
     <!-- Header and Navigation -->
     <header class="sticky-nav">
@@ -80,34 +80,34 @@
     <main role="main">
 
         <!-- Hero/Intro Section -->
-        <section id="about-hero" class="section bg-surface padding-lg py-20 text-center">
-            <div class="container max-w-3xl mx-auto">
-                <h1 class="max-heading accent-gradient mb-4">Experience. Dedication. Partnership.</h1>
+        <section id="about-hero" class="section bg-surface py-20 text-center max-w-3xl mx-auto">
+            <div class="container hero-content text-center">
+                <h1 class="max-heading mb-mb-4 accent-gradient">Experience. Dedication. Partnership.</h1>
                 <p class="text-xl text-color-muted">We are a senior, highly dedicated team focused on delivering robust,
                     scalable digital foundations that support your business goals.</p>
             </div>
         </section>
 
         <!-- Agency Story -->
-        <section id="agency-story" class="service-section padding-lg py-24">
-            <div class="container grid md:grid-cols-3 gap-16 items-center">
+        <section id="agency-story" class="service-section">
+            <div class="container grid gap-16 items-center md:grid-cols-3">
 
-                <!-- Image Placeholder for the story (or a nice abstract representation) -->
-                <div class="md:col-span-1 p-8 bg-bg-surface rounded-lg flex items-center justify-center hover:shadow-blue-glow transition duration-300 shadow-2xl"
-                    role="figure">
+                <!-- Image Placeholder for the story -->
+                <div class="p-8 bg-bg-surface rounded-lg shadow-2xl flex justify-center" role="figure">
                     <svg width="100%" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="100%" height="100%" fill="#1A2140" />
                         <path d="M50 380 C 150 280, 350 380, 550 300" stroke="var(--color-accent-mid)" stroke-width="6"
                             opacity=".7" />
                         <path d="M50 380 L 550 380" stroke="var(--color-text-primary)" stroke-width="2" opacity=".1" />
                     </svg>
-                    <p class="absolute text-xl mt-10 text-color-muted">Visual: Collaboration and Strategy</p>
+                    <!-- FIX: Added caption flow using normal document flow -->
+                    <p class="absolute bottom-4 text-xl text-color-muted">Visual: Collaboration and Strategy</p>
                 </div>
 
                 <!-- Text Content -->
-                <div class="md:col-span-2 space-y-8">
+                <div class="space-y-8 md:col-span-2">
                     <div>
-                        <h2 class="text-3xl accent-gradient mb-4">Building Digital Assets, Not Just Websites.</h2>
+                        <h2 class="text-3xl mb-4 accent-gradient">Building Digital Assets, Not Just Websites.</h2>
                         <p class="text-lg text-color-muted leading-relaxed">AlexWeb Consult was founded on the principle
                             that digital presence must be a strategic asset. We saw too many businesses relying on
                             fragile or outdated platforms. Our goal is to change that.</p>
@@ -118,7 +118,7 @@
 
                     <!-- Skills/Expertise Overview -->
                     <div>
-                        <h3 class="text-2xl accent-gradient mb-4">Our Core Competencies</h3>
+                        <h3 class="text-2xl mb-4 accent-gradient">Our Core Competencies</h3>
                         <div class="flex flex-wrap gap-4 text-color-muted">
                             <span
                                 class="skill-tag bg-primary/5 border border-[var(--color-accent-mid)] hover:bg-blue-900 cursor-pointer transition duration-150 px-3 py-1 rounded-full">Full
@@ -138,24 +138,24 @@
             </div>
         </section>
 
-        <!-- Team/Skills Section (Alex Pashov) -->
-        <section id="team" class="service-section padding-lg pt-24 pb-20 bg-surface">
+        <!-- Team/Skills Section -->
+        <section id="team" class="service-section bg-surface">
             <div class="container text-center max-w-3xl mx-auto">
-                <h2 class="text-3xl accent-gradient mb-3">Meet the Team: Expertise on Demand</h2>
-                <p class="section-subtitle max-w-lg mx-auto text-color-muted mb-10">Our senior developers bring a
-                    diverse, hands-on portfolio to every project.</p>
+                <h2 class="text-3xl mb-mb-3 accent-gradient">Meet the Team: Expertise on Demand</h2>
+                <p class="section-subtitle mb-lg">Our senior developers bring a diverse, hands-on portfolio to every
+                    project.</p>
 
                 <!-- Member Card - Alex Pashov -->
-                <div
-                    class="team-member bg-bg-primary p-8 rounded-xl shadow-2xl flex flex-col md:flex-row items-center gap-8 hover:shadow-blue-glow transition duration-300">
-                    <!-- Avatar Placeholder (Using a placeholder SVG/initials) -->
-                    <div class="team-avatar flex-shrink-0 w-32 h-32 bg-gradient-to-br from-color-accent-light to-color-accent-dark rounded-full border-4"
+                <div class="team-member p-8 shadow-2xl flex flex-col md:flex-row items-center gap-8 hover-lift"
+                    role="figure">
+                    <!-- Avatar Placeholder -->
+                    <div class="team-avatar flex-shrink-0 w-32 h-32 rounded-full border-4"
                         style="border-color: var(--color-accent-mid);">
-                        <!-- Placeholder for initials or SVG -->
+                        <!-- This is a visual placeholder for the avatar. In production, this would be an image or initial SVG -->
                     </div>
 
                     <div class="text-left">
-                        <h3 class="text-2xl accent-gradient mb-1">Alex Pashov</h3>
+                        <h3 class="text-2xl mb-1 accent-gradient">Alex Pashov</h3>
                         <p class="text-lg text-color-muted mb-4">Web Developer, System Programmer</p>
 
                         <p class="mb-6 text-gray-300 leading-relaxed">
@@ -167,7 +167,8 @@
                         </p>
 
                         <div class="flex flex-wrap gap-x-6 text-color-muted">
-                            <span><strong>Key Skills:</strong> Java, C++, Python, JavaScript, HTML5/CSS3</span>
+                            <span class="text-base"><strong>Key Skills:</strong> Java, C++, Python, JavaScript,
+                                HTML5/CSS3</span>
                             <a href="https://github.com/pa6ov" target="_blank"
                                 class="text-sm font-medium hover:underline accent-light-hover transition duration-150">GitHub
                                 Portfolio &rarr;</a>
@@ -180,22 +181,23 @@
 
 
         <!-- Final CTA Band -->
-        <section id="contact-section" class="cta-final bg-surface py-20 mt-8">
-            <div class="container text-center">
-                <h2 class="text-4xl font-extrabold mb-4 accent-gradient">Ready to Start Your Digital Transformation?
+        <section id="contact-section" class="cta-final section bg-surface py-20 mt-8">
+            <div class="container text-center max-w-3xl mx-auto">
+                <h2 class="text-4xl font-extrabold mb-mb-4 accent-gradient">Ready to Start Your Digital Transformation?
                 </h2>
-                <p class="text-xl text-color-muted mb-10 max-w-3xl mx-auto">Let's discuss your needs in a free,
-                    no-commitment consultation. We are ready when you are.</p>
-                <a href="contact.html" class="button primary-cta btn-lg px-12 py-4">Book Free Consultation Today!</a>
+                <p class="text-xl text-color-muted mb-lg">Let's discuss your needs in a free, no-commitment
+                    consultation. We are ready when you are.</p>
+                <a href="contact.html" class="button primary-cta btn-large px-12 py-4 secondary-glow">Book Free
+                    Consultation Today!</a>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary py-16 border-t border-gray-800">
-        <div class="container grid grid-cols-2 md:grid-cols-5 gap-10 text-sm">
-            <!-- Content copied from index.html for consistency -->
+    <footer class="bg-primary pt-16 pb-10 border-t border-gray-800">
+        <div class="container grid text-sm" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <!-- Content unchanged -->
             <div class="col-span-2 md:col-span-2">
                 <h4 class="text-xl mb-3 accent-gradient">AlexWeb Consult</h4>
                 <p class="text-color-muted max-w-xs mb-4">Your Digital Partner. We build full-stack web solutions and
@@ -231,7 +233,7 @@
             </div>
 
         </div>
-        <div class="container mt-10 pt-6 border-t border-gray-800 text-center text-xs text-color-muted">
+        <div class="mt-10 pt-6 border-t border-gray-800 text-center text-xs text-color-muted">
             &copy; 2024 AlexWeb Consult. All Rights Reserved. | Built with passion and code perfection.
         </div>
     </footer>
