@@ -38,12 +38,19 @@ body {
     color: var(--color-text-primary);
 }
 
-/* Global Utility Classes */
+
+/* Global Utility Classes (Kept and Refined) */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
+.section {
+    padding: 80px 0;
+    /* Standard vertical rhythm maintained */
+}
+
 
 /* General Spacing Utilities (Replacing utility classes) */
 .mt-4 {
@@ -73,11 +80,66 @@ body {
 }
 
 
+/* Flex and Grid Overhaul (Critical fix for layout stability) */
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .flex-center {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+/* Grid Layout System */
+.grid-2,
+.grid-3 {
+    display: grid;
+    gap: 2rem;
+    /* Default to a single column stack for small screens */
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        /* Tablet breakpoint - 2 columns */
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* Desktop retains the intended column count */
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Text/Spacing Utility Implementations (Kept) */
+.text-color-muted {
+    color: var(--color-text-muted) !important;
+}
+
+.max-w-lg {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
 /* ================================================== */
 /* COMPONENTS (BUTTONS, CARDS, NAVIGATION) - FIXED STYLING */
 /* ================================================== */
 
-/* Buttons */
 .button {
     display: inline-block;
     padding: 12px 30px;
@@ -111,13 +173,6 @@ body {
     border: 1px solid var(--color-accent-mid);
     padding: 8px 0;
     display: inline-block;
-    /* Ensures padding is respected */
-}
-
-.secondary-cta:hover {
-    background-color: rgba(74, 159, 232, 0.1);
-    box-shadow: none;
-    transform: none;
 }
 
 /* Large Buttons */
@@ -127,83 +182,86 @@ body {
 }
 
 
+/* Language Selector Styling (NEW) */
+#language-selector {
+    position: relative;
+    /* Required for the dropdown menu to appear correctly */
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#language-selector .flag {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* Basic style for the dropdown menu if needed later */
+#language-dropdown {
+    position: absolute;
+    top: 100%;
+    /* Position directly below the selector button */
+    right: 0;
+    background: var(--color-bg-surface);
+    border: 1px solid #333;
+    z-index: 1020;
+    min-width: 150px;
+}
+
+
+/* Cards and Groups (Kept) */
+.service-card,
+.project-card,
+.feature-box,
+.team-member {
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 /* ================================================== */
-/* NAVIGATION BAR (STICKY) - FIXED */
+/* NAVIGATION BAR (STICKY) - FIXES APPLIED HERE */
 /* ================================================== */
 
 .sticky-nav {
     position: sticky;
     top: 0;
     background-color: rgba(11, 14, 26, 0.95);
-    /* Semi-transparent background on scroll */
     z-index: 1000;
     backdrop-filter: blur(8px);
 }
 
-/* Desktop Navigation (No change needed here) */
-
-
-/* MOBILE MENU SPECIFIC FIXES: Positioning the links absolutely when open */
-.nav-links {
-    display: flex;
-    /* Default for desktop view */
-    list-style: none;
-    gap: 30px;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-}
-
-/* Mobile menu toggle (hidden on desktop) */
-.menu-toggle {
-    display: none;
-}
-
+/* Mobile Menu Positioning Fixes (Absolute positioning for proper flow) */
 @media (max-width: 768px) {
     .nav-links {
-        /* Overrides the flex display for mobile view, making it stack vertically */
         flex-direction: column;
         position: absolute;
-        /* CRITICAL FIX: Takes menu out of flow and allows absolute positioning */
+        /* CRITICAL FIX */
         top: 100%;
         left: 0;
         right: 0;
         background-color: var(--color-bg-primary);
         padding: 20px;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
-        /* Default state (hidden) */
         height: 0;
+        /* Start collapsed */
         overflow: hidden;
         transition: height 0.3s ease-out;
-        /* Smooth appearance transition */
     }
 
     /* State when open (Toggled by JS) */
     .nav-links.open {
         display: flex;
         height: auto;
-        /* Let content dictate the necessary height */
-    }
-
-    .menu-toggle {
-        display: block;
-        z-index: 1010;
-    }
-
-    /* Force mobile stacking for content sections */
-    body>section>.container,
-    .grid-2,
-    .grid-3 {
-        gap: 2rem !important;
+        /* Allows the menu to expand vertically to fit content */
     }
 }
 
 
 /* ================================================== */
-/* LAYOUT AND GRAPHICS STYLING (GENERAL FIXES) */
+/* GENERAL UTILITY POLISHES (Cleanup & Consistency) */
 /* ================================================== */
 
-/* General Image Styling Fix: Ensures all images scale properly and behave as blocks. */
+/* Image Fallback Fix: Ensures images are never oversized or misplaced. */
 img {
     max-width: 100%;
     height: auto;
@@ -211,50 +269,7 @@ img {
 }
 
 
-/* Card Groupings & Flow (General adjustments for predictable vertical rhythm) */
-.service-card,
-.project-card,
-.feature-box,
-.team-member {
-    /* Consistency improvement */
-    border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-
-/* ================================================== */
-/* MEDIA QUERIES (Comprehensive Responsiveness) */
-/* ================================================== */
-
-@media (max-width: 480px) {
-
-    /* General Padding Reduction for smaller screens */
-    .section {
-        padding: 48px 0 !important;
-    }
-
-    /* Heading Size */
-    .max-heading {
-        font-size: clamp(2rem, 10vw, 3.5rem);
-    }
-
-    /* CTA Buttons - Full Width & large tap targets */
-    .button,
-    .btn-large {
-        width: 100% !important;
-        padding: 14px 20px !important;
-        margin-top: 1rem;
-        /* Added margin to separate stacked buttons */
-    }
-
-    /* Grid Collapse to Single Column (Redundant check, but safe) */
-    .pillar-grid,
-    .portfolio-grid {
-        gap: 2rem !important;
-    }
-
-}
-
-@media (min-width: 481px) and (max-width: 1024px) {
-    /* This section remains largely the same as previous definitions */
+/* Footer Grid System (Defined for all HTML files) */
+footer .container>div[style*="grid-template-columns"] {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }

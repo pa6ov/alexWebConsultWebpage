@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Free Consultation | AlexWeb Consult</title>
+    <meta name="description"
+        content="Schedule a free, zero-obligation consultation with our senior development team to discuss your digital strategy and project scope.">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Consultation Booking | AlexWeb Consult">
+    <meta property="og:description"
+        content="Talk to our experts today. Zero commitment required—just a free consultation! Your Digital Partner awaits.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.alexwebconsult.com/consultation.html">
+    <meta property="og:image" content="[Placeholder for Consultation Image]">
+    <!-- Twitter Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@alexwebconsult">
+    <link rel="canonical" href="https://www.alexwebconsult.com/consultation.html">
+
+    <style>
+        /* Placeholder styles removed/handled by the dedicated style.css */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ConsultService",
+      "name": "Free Consultation Booking",
+      "description": "Schedule a zero-obligation consultation with AlexWeb Consult's senior development team to discuss digital strategy.",
+      "potentialAction": {
+        "@type": "EntryPoint",
+        "urlTemplate": "mailto:alexweb.consult@outlook.com?subject=Consultation Inquiry={query}"
+      }
+    }
+    </script>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- Header and Navigation -->
+    <header class="sticky-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo" aria-label="AlexWeb Consult - Your Digital Partner">
+                <span style="color: var(--color-text-primary); font-size: 1.8em; font-weight: bold;">Alex</span><span
+                    style="color: var(--color-accent-dark);">Web</span>
+                <div class="consult-wordmark"
+                    style="color: var(--color-accent-light); letter-spacing: 4px; text-transform: uppercase; font-size: 0.8em;">
+                    CONSULT</div>
+            </a>
+            <!-- Language Selector added here -->
+            <nav aria-label="Main site navigation">
+                <ul class="nav-links">
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Work</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#" aria-current="page" class="cta-button nav-cta-btn">Book Free Consultation</a></li>
+                </ul>
+                <!-- Mobile menu button -->
+                <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <!-- Hero/Goal Section -->
+        <section id="consultation-hero" class="section bg-surface py-20 text-center max-w-4xl mx-auto">
+            <div class="container hero-content text-center">
+                <h1 class="max-heading mb-mb-4 accent-gradient">Start with a Free Consultation.</h1>
+                <p class="text-xl text-color-muted mb-lg">Let's talk strategy, scope, and scale. Book a zero-obligation
+                    call with our senior development team today.</p>
+                <!-- Changed primary CTA classes -->
+                <a href="#consultation-form" class="button primary-cta btn-large px-12 py-4 secondary-glow">Secure Your
+                    Free Slot!</a>
+            </div>
+        </section>
+
+        <!-- Explanation & Value Prop Section -->
+        <section id="explanation" class="service-section">
+            <div class="container text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl mb-mb-4 accent-gradient">What to Expect from the Call</h2>
+                <p class="section-subtitle mb-lg">We don't sell solutions on this call; we analyze your problems and
+                    outline a clear, technical roadmap for success.</p>
+
+                <div class="grid-2 gap-10 mt-12 text-left border-l-4 pl-6"
+                    style="border-color: var(--color-accent-light);">
+                    <!-- Pillar 1 -->
+                    <article class="service-card hover-lift">
+                        <h3 class="text-xl mb-3 accent-gradient">Scope Definition</h3>
+                        <p class="text-color-muted mb-2">We help define exactly what the site needs to achieve, moving
+                            beyond vague ideas into measurable business goals.</p>
+                    </article>
+
+                    <!-- Pillar 2 -->
+                    <article class="service-card hover-lift">
+                        <h3 class="text-xl mb-3 accent-gradient">Technical Blueprint</h3>
+                        <p class="text-color-muted mb-2">We discuss the best technology stack (e.g., Python/React vs.
+                            PHP/WordPress) to ensure scalability and maintainability for years to come.</p>
+                    </article>
+
+                    <!-- Pillar 3 -->
+                    <article class="service-card hover-lift">
+                        <h3 class="text-xl mb-3 accent-gradient">Roadmap & Estimates</h3>
+                        <p class="text-color-muted mb-2">You leave with a clear, step-by-step project timeline and
+                            realistic cost estimate, leaving no guesswork.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Form Section (The main conversion area) -->
+        <section id="consultation-form" class="service-section bg-surface py-20">
+            <div class="container max-w-xl mx-auto">
+                <h2 class="text-3xl mb-mb-4 accent-gradient text-center">Book Your Slot Below</h2>
+
+                <!-- Form -->
+                <div class="bg-bg-surface p-8 rounded-lg shadow-2xl">
+                    <form action="#" method="POST" class="space-y-5">
+                        <div class="mb-3">
+                            <label for="name" class="block text-sm font-medium text-color-muted mb-1">Full Name
+                                *</label>
+                            <input type="text" id="name" name="name" required aria-required="true"
+                                class="w-full p-3 bg-primary border border-gray-700 rounded-md focus:ring-2 focus:ring-[var(--color-accent-light)] outline-none text-white placeholder-gray-500">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="block text-sm font-medium text-color-muted mb-1">Email Address
+                                *</label>
+                            <input type="email" id="email" name="email" required aria-required="true"
+                                class="w-full p-3 bg-primary border border-gray-700 rounded-md focus:ring-2 focus:ring-[var(--color-accent-light)] outline-none text-white placeholder-gray-500">
+                        </div>
+                        <div class="mb-3">
+                            <label for="project_type" class="block text-sm font-medium text-color-muted mb-1">Project
+                                Type *</label>
+                            <select id="project_type" name="project_type" required aria-required="true"
+                                class="w-full p-3 bg-primary border border-gray-700 rounded-md focus:ring-2 focus:ring-[var(--color-accent-light)] outline-none text-white appearance-none">
+                                <option value="" disabled selected>Select primary project type</option>
+                                <option value="website_creation">Website Creation & Support (New Build)</option>
+                                <option value="tech_consulting">Tech Consultation / Strategy Audit</option>
+                                <option value="maintenance">Ongoing Maintenance / Support</option>
+                                <option value="other">Other Inquiry / General Question</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="block text-sm font-medium text-color-muted mb-1">Tell us about
+                                your goals (Required)</label>
+                            <textarea id="message" name="message" rows="5" required aria-required="true"
+                                placeholder="e.g., I need an e-commerce site for fitness programs, or help migrating my old website."
+                                class="w-full p-3 bg-primary border border-gray-700 rounded-md focus:ring-2 focus:ring-[var(--color-accent-light)] outline-none text-white placeholder-gray-500"></textarea>
+                        </div>
+
+                        <button type="submit" class="button primary-cta btn-lg w-full mt-6">Submit for
+                            Consultation</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary pt-16 pb-10 border-t border-gray-800">
+        <div class="container grid text-sm" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <!-- Content unchanged -->
+            <div class="col-span-2 md:col-span-2">
+                <h4 class="text-xl mb-3 accent-gradient">AlexWeb Consult</h4>
+                <p class="text-color-muted max-w-xs mb-4">Your Digital Partner. We build full-stack web solutions and
+                    provide expert tech consulting to power your growth.</p>
+            </div>
+
+            <div>
+                <h5 class="uppercase text-sm font-semibold tracking-wider mb-3 text-accent-light">Quick Links</h5>
+                <ul class="space-y-2 text-color-muted">
+                    <li><a href="services.html" class="hover:text-white transition duration-150">Services</a></li>
+                    <li><a href="portfolio.html" class="hover:text-white transition duration-150">Work Portfolio</a>
+                    </li>
+                    <li><a href="about.html" class="hover:text-white transition duration-150">About Us</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-150 active-link">Book Consultation</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="uppercase text-sm font-semibold tracking-wider mb-3 text-accent-light">Contact</h5>
+                <p class="mb-2 text-color-muted">✉️ <a href="mailto:alexweb.consult@outlook.com"
+                        style="color: var(--color-text-primary); text-decoration: none;">alexweb.consult@outlook.com</a>
+                </p>
+            </div>
+
+            <div>
+                <h5 class="uppercase text-sm font-semibold tracking-wider mb-3 text-accent-light">Connect</h5>
+                <div aria-label="Social Media Links" class="flex space-x-4">
+                    <a href="https://www.instagram.com/alexweb.consult/" target="_blank"
+                        aria-label="Instagram profile for AlexWeb Consult"
+                        class="text-color-muted hover:text-accent-light transition duration-150 transform hover:scale-110">@alexweb.consult</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="mt-10 pt-6 border-t border-gray-800 text-center text-xs text-color-muted">
+            &copy; 2024 AlexWeb Consult. All Rights Reserved. | Built with passion and code perfection.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
